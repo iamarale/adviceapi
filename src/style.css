@@ -55,11 +55,19 @@ body {
   text-align: center;
   line-height: 1.2;
   color: var(--light-cyan);
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.img.active {
+.img-mobile.active {
   display: block;
   padding: 1.5rem 0;
   margin: 0 auto;
+}
+.img-desktop {
+  display: none;
+  width: 100%;
 }
 .dice-container {
   position: absolute;
@@ -67,7 +75,25 @@ body {
   padding: 1.25rem;
   left: 43%;
   bottom: -2rem;
-
   background: var(--neon-green);
   border-radius: 100%;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease;
+}
+.dice-container:hover {
+  box-shadow: 0 0 10px 5px var(--neon-green);
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    min-height: 250px;
+    min-width: 500px;
+  }
+  .img-mobile.active {
+    display: none;
+  }
+  .img-desktop.active {
+    padding: 2.5rem 0;
+    display: block;
+  }
 }
